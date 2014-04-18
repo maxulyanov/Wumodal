@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Плагин модального окна</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.wumodal.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.test').wumodal();
+
+		$('.test2').wumodal({
+			template: '<p>Проверка работоспособности шаблона</p>'
+					  +'<p>Все отлично!</p>',
+		});
+	})
+</script>
+</head>
+<body>
+	<a href="#" class="test">Test 1</a>
+	<a href="#" class="test2">Test 2</a>
+</body>
+</html>
