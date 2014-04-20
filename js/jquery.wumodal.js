@@ -9,6 +9,7 @@
 			speedModal : 300,
 			speedOverlay : 300, 
 			opacityOverlay : 0.7,
+			containerClass : '',
 			overlayBg : '#000',
 		};
 
@@ -16,27 +17,36 @@
 
 		return this.each(function(){
 
-			//Определим переменные	
+			// Определение переменных	
 			var body = $('body'),
 				overlay = $('<div class="wumodal-overlay"></div>'),
-				container = $('<div class="wumodal-container"></div>'),
+				container = $('<div class="wumodal-container ' + options.containerClass + '"></div>'),
 				content = $('<div class="wumodal-content"></div>'),
 				close = $('<a href="#" class="wumodal-close-button">Закрыть</a>');
 
-			//
+			// Запуск функций показа модального окна
+			$(this).on('click', function(event) {
+				event.preventDefault();
+				showModal();
+				animateShow();
+			});	
+
+			// Есть ли уже в DOM элементы
 			function showModal(){
 				if($('.wumodal-overlay').length === 0 && $('.wumodal-container').length === 0){
 					body.append(overlay, container);
 				}
 			};
 
+			// Добавим в container кнопку и шаблон контента
 			container.append(close, content.append(options.template));
 
-
+			// Как показывать кнопку закрытия (text/img)
 			if(options.closeImg){
 				close.addClass('wumodal-cl-butt-img');
 			};
 
+			// Стили по умолчанию
 			container.css({
 				opacity: 0,
 			})
@@ -45,6 +55,7 @@
 				background: options.overlayBg,
 			})
 
+			// Функции анимации
 			function animateShow(){
 				overlay.animate({
 					opacity: options.opacityOverlay,
@@ -65,8 +76,7 @@
 				}, options.speedModal)
 			};
 
-
-			//Закрытие окна
+			// Запуск функций скрытия окна по различным событиям
 			body.on('keydown', keydownClose);
 			body.on('click', clickOverlay);
 			body.on('click', '.wumodal-close-button', function(event){
@@ -74,29 +84,30 @@
 				hideModal();
 			});
 
+			// По нажатию клавиатуры
 			function keydownClose (event){
 				if(options.closeKeydown){
 					if (event.keyCode === options.closeKeydownNum){
 						hideModal();
 					}
-				}
+				};
 			};
 
+			// По клику на затемнение
 			function clickOverlay(event){
 				if (options.closeClickOverlay){
 					if ($(event.target).is('.wumodal-overlay')){
 						hideModal();
 					}
-				}
+				};
 			};
 
-
-
+			// Функция вернет параметр задержки для удаления из DOM
 			function maxDelay(a, b){
 				return Math.max(a,b);
-			}
+			};
 
-			//Функция скрытия
+			// Запуск функции скрытия и методов для удаления элементов из DOM
 			function hideModal(){
 				animateHide();
 				setTimeout(function(){
@@ -105,16 +116,6 @@
 				}, maxDelay(options.speedModal, options.speedOverlay));
 			};
 
-
-			//Запустим
-			$(this).on('click', function(event) {
-				event.preventDefault();
-				showModal();
-				animateShow();
-			});
-			
-
 		});
-
 	};
 })(jQuery)
