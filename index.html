@@ -8,7 +8,10 @@
 <script src="js/jquery.wumodal.js"></script>
 <script type="text/javascript">
 	$(function(){
-		$('.test').wumodal();
+		$('.test').wumodal({
+			opacityOverlay : 0.4,
+			overlayBg : 'red'
+		});
 
 		$('.test2').wumodal({
 			template: '<p>Проверка работоспособности шаблона</p>'

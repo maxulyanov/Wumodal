@@ -4,7 +4,9 @@
 			template : 'Вы видите базовый шаблон для этого модального окна!',
 			closeClickOverlay : true,
 			closeKeydown : true,
-			closeKeydownNum : 27, 
+			closeKeydownNum : 27,
+			opacityOverlay : 0.7,
+			overlayBg : '#000' 
 		};
 
 		options = $.extend(defaults, options);
@@ -27,18 +29,32 @@
 
 			container.append(close, content.append(options.template));
 
+			container.css({
+				opacity: 0,
+			})
+			overlay.css({
+				opacity: 0,
+				background: options.overlayBg,
+			})
+
 			function animateShow(){
-				overlay.fadeIn('500');
+				overlay.animate({
+					opacity: options.opacityOverlay,
+				}, 300);
 				$(container).animate({
-					top : '50%'
-				}, 500)
+					top : '50%',
+					opacity: '1',
+				}, 300)
 			};
 
 			function animateHide(){
-				overlay.fadeOut('500');
+				overlay.animate({
+					opacity: 0,
+				}, 300);
 				$(container).animate({
-					top : '0%'
-				}, 500)
+					top : '20%',
+					opacity: '0',
+				}, 300)
 			};
 
 

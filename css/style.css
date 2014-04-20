@@ -32,25 +32,24 @@ body{
 /*Style*/
 .wumodal-overlay{
 	position: absolute;
-	background: #222;
-	opacity: 0.5;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	z-index: 1;
 	cursor: pointer;
-	display: none;
 }
 .wumodal-container{
-	background: white;
+	background: #222;
+	padding: 3px;
 	position: absolute;
 	z-index: 10;
-	top: 0;
+	top: 20%;
 	left: 50%;
 }
 .wumodal-content{
 	padding: 10px;
+	background: #FFF;
 }
 .wumodal-close-button{
 	position: absolute;
