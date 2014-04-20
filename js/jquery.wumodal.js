@@ -6,7 +6,8 @@
 			closeKeydown : true,
 			closeKeydownNum : 27,
 			opacityOverlay : 0.7,
-			overlayBg : '#000' 
+			overlayBg : '#000',
+			closeImg : true, 
 		};
 
 		options = $.extend(defaults, options);
@@ -28,6 +29,11 @@
 			};
 
 			container.append(close, content.append(options.template));
+
+
+			if(options.closeImg){
+				close.addClass('wumodal-cl-butt-img');
+			};
 
 			container.css({
 				opacity: 0,
