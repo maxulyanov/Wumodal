@@ -5,9 +5,11 @@
 			closeClickOverlay : true,
 			closeKeydown : true,
 			closeKeydownNum : 27,
+			closeImg : true,
+			speedModal : 300,
+			speedOverlay : 300, 
 			opacityOverlay : 0.7,
 			overlayBg : '#000',
-			closeImg : true, 
 		};
 
 		options = $.extend(defaults, options);
@@ -46,21 +48,21 @@
 			function animateShow(){
 				overlay.animate({
 					opacity: options.opacityOverlay,
-				}, 300);
+				}, options.speedOverlay);
 				$(container).animate({
 					top : '50%',
 					opacity: '1',
-				}, 300)
+				}, options.speedModal)
 			};
 
 			function animateHide(){
 				overlay.animate({
 					opacity: 0,
-				}, 300);
+				}, options.speedOverlay);
 				$(container).animate({
 					top : '20%',
 					opacity: '0',
-				}, 300)
+				}, options.speedModal)
 			};
 
 
@@ -89,13 +91,18 @@
 			};
 
 
+
+			function maxDelay(a, b){
+				return Math.max(a,b);
+			}
+
 			//Функция скрытия
 			function hideModal(){
 				animateHide();
 				setTimeout(function(){
 					overlay.remove();
 					container.remove();
-				}, 500);
+				}, maxDelay(options.speedModal, options.speedOverlay));
 			};
 
 

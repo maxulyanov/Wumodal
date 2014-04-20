@@ -26,7 +26,7 @@ a{
 
 /*General*/
 body{
-	
+	font-family: Arial;
 }
 
 /*Style*/
@@ -64,7 +64,7 @@ body{
 	right: 5px;
 	top: 2px;
 	color: #999999;
-	font: 11px Arial;
+	font-size: 11px;
 }
 .wumodal-container .wumodal-cl-butt-img{
 	position: absolute;
