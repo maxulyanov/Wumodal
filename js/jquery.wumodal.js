@@ -40,6 +40,7 @@
 				if($('.wumodal-overlay').length === 0 && $('.wumodal-container').length === 0){
 					body.append(overlay, container);
 				}
+				defaultsStyle()
 			};
 
 			// Добавим в container кнопку и шаблон контента
@@ -50,23 +51,60 @@
 				close.addClass('wumodal-cl-butt-img');
 			};
 
-			// Стили по умолчанию
-			if(pos === 'center'){
-				pos = 'top';
-				objDef[pos] = '50%'
-			}
-			else{
-				objDef[pos] = '20%';
-			}
-			container.css({
-				opacity: 0,
+			//Расчет стилей
+			function defaultsStyle(){
+				var pos = options.positionContainer;
+				var coordHorizontal = container.width() / 2;
+				var coordVertical = container.height() / 2;
 
-			}).css(objDef)
+				if(pos === 'center'){
+					pos = 'top';
+					objDef[pos] = '50%'
+				}
+				else{
+					objDef[pos] = '20%';
+				}
 
-			overlay.css({
-				opacity: 0,
-				background: options.overlayBg,
-			})
+				if(pos === 'top'){
+					container.css({
+						marginTop : -coordVertical,
+						left: '50%'
+					})
+				}
+				else if(pos === 'bottom'){
+					container.css({
+						marginBottom : -coordVertical,
+						left : '50%'
+					})
+				}
+				else if(pos === 'left'){
+					container.css({
+						marginTop : -coordVertical,
+						top : '50%',
+						left : '50%',
+					})
+				}
+				else if(pos === 'right'){
+					container.css({
+						marginTop : -coordVertical,
+						marginRight : -coordHorizontal,
+						top : '50%',
+						right : '50%',
+					})
+				}
+
+				container.css({
+					opacity: 0,
+					marginLeft : -coordHorizontal,
+
+				}).css(objDef)
+
+				overlay.css({
+					opacity: 0,
+					background: options.overlayBg,
+				})
+			};
+
 
 			// Функции анимации
 			function animateShow(){
