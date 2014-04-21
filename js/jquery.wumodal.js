@@ -6,9 +6,10 @@
 			closeKeydown : true,
 			closeKeydownNum : 27,
 			closeImg : true,
-			speedModal : 300,
-			speedOverlay : 300, 
+			speedModal : 400,
+			speedOverlay : 400, 
 			opacityOverlay : 0.7,
+			positionContainer : 'top',
 			containerClass : '',
 			overlayBg : '#000',
 		};
@@ -22,7 +23,10 @@
 				overlay = $('<div class="wumodal-overlay"></div>'),
 				container = $('<div class="wumodal-container ' + options.containerClass + '"></div>'),
 				content = $('<div class="wumodal-content"></div>'),
-				close = $('<a href="#" class="wumodal-close-button">Закрыть</a>');
+				close = $('<a href="#" class="wumodal-close-button">Закрыть</a>'),
+				objDef = {};
+				pos = options.positionContainer;
+
 
 			// Запуск функций показа модального окна
 			$(this).on('click', function(event) {
@@ -47,9 +51,18 @@
 			};
 
 			// Стили по умолчанию
+			if(pos === 'center'){
+				pos = 'top';
+				objDef[pos] = '50%'
+			}
+			else{
+				objDef[pos] = '20%';
+			}
 			container.css({
 				opacity: 0,
-			})
+
+			}).css(objDef)
+
 			overlay.css({
 				opacity: 0,
 				background: options.overlayBg,
@@ -57,23 +70,39 @@
 
 			// Функции анимации
 			function animateShow(){
+				var obj = {};
+				var position = options.positionContainer;
+				obj[position] = '50%';
 				overlay.animate({
 					opacity: options.opacityOverlay,
 				}, options.speedOverlay);
-				$(container).animate({
-					top : '50%',
-					opacity: '1',
-				}, options.speedModal)
+				$(container).animate(obj, options.speedModal)
+				.animate({
+					opacity:'1'
+				}, {
+					queue:false, duration: options.speedOverlay
+				});
 			};
 
 			function animateHide(){
+				var obj = {};
+				var position = options.positionContainer;
+				if(pos === 'center'){
+					position = 'top'
+					obj[position] = '50%'
+				}
+				else{
+					obj[position] = '20%'
+				} 
 				overlay.animate({
 					opacity: 0,
 				}, options.speedOverlay);
-				$(container).animate({
-					top : '20%',
-					opacity: '0',
-				}, options.speedModal)
+				$(container).animate(obj, options.speedModal)
+				.animate({
+					opacity:'0'
+				}, {
+					queue:false, duration: options.speedOverlay
+				});
 			};
 
 			// Запуск функций скрытия окна по различным событиям
