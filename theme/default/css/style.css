@@ -1,0 +1,62 @@
+/*Reset*/
+*{
+	margin:0;
+	padding:0;
+}
+img{
+	border:none;
+}
+input{
+	
+	border:none;
+}
+ul{
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+input,select,option{
+	outline:0;
+	border:0;
+}
+a{
+    text-decoration: none;
+}
+
+/*General*/
+body{
+	font-family: Arial;
+}
+
+/*Style Theme Default*/
+.wumodal-container{
+	-moz-box-shadow: 0 0 0 6px rgba(170, 170, 170, 0.3);
+    -webkit-box-shadow: 0 0 0 6px rgba(170, 170, 170, 0.3);
+    box-shadow: 0 0 0 6px rgba(170, 170, 170, 0.3);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.wumodal-content{
+	padding: 10px;
+	background: #FFF;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.wumodal-close-button{
+	right: 5px;
+	top: 2px;
+	color: #999999;
+	font-size: 11px;
+}
+.wumodal-container .wumodal-cl-butt-img{
+	right: -15px;
+	top: -15px;
+	display: block;
+	text-indent: -9999px;
+	background: url(../img/close.png) no-repeat;
+	width: 24px;
+	height: 24px;
+}

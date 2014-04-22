@@ -10,8 +10,10 @@
 			speedOverlay : 400, 
 			opacityOverlay : 0.7,
 			positionContainer : 'top',
+			activeEvent : 'click',
 			containerClass : '',
 			overlayBg : '#000',
+			theme : 'default',
 		};
 
 		options = $.extend(defaults, options);
@@ -27,9 +29,13 @@
 				objDef = {};
 				pos = options.positionContainer;
 
+			// Значение hover переданное при вызове плагина, так же будет работать	
+			if(options.activeEvent === 'hover'){
+				options.activeEvent = 'mouseover'
+			}	
 
 			// Запуск функций показа модального окна
-			$(this).on('click', function(event) {
+			$(this).on(options.activeEvent, function(event) {
 				event.preventDefault();
 				showModal();
 				animateShow();
@@ -51,7 +57,7 @@
 				close.addClass('wumodal-cl-butt-img');
 			};
 
-			//Расчет стилей
+			// Расчет изначальных координат и стилей окна
 			function defaultsStyle(){
 				var pos = options.positionContainer;
 				var coordHorizontal = container.width() / 2;
@@ -106,7 +112,7 @@
 			};
 
 
-			// Функции анимации
+			// Функция анимации при показе
 			function animateShow(){
 				var obj = {};
 				var position = options.positionContainer;
@@ -116,12 +122,13 @@
 				}, options.speedOverlay);
 				$(container).animate(obj, options.speedModal)
 				.animate({
-					opacity:'1'
+					opacity: '1'
 				}, {
 					queue:false, duration: options.speedOverlay
 				});
 			};
 
+			// Функция анимации при скрытии
 			function animateHide(){
 				var obj = {};
 				var position = options.positionContainer;
@@ -183,6 +190,26 @@
 				}, maxDelay(options.speedModal, options.speedOverlay));
 			};
 
+			//Выбор темы
+			var myTheme = $('<link>');
+			myTheme.attr({
+				type: 'text/css',
+				rel: 'stylesheet',
+				href: 'theme/' + options.theme + '/css/style.css',
+				'data-theme' : 'this-' + options.theme,
+			});
+
+			var attr = myTheme.attr('data-theme')
+
+			$('link').each(function(){
+				var thisAttr = $(this).attr('data-theme')
+				if(attr === thisAttr){		
+					$(this).remove();
+				}
+				else{
+					$('head').append(myTheme);
+				}
+			})
 		});
 	};
 })(jQuery)

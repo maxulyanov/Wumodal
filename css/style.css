@@ -40,40 +40,12 @@ body{
 	cursor: pointer;
 }
 .wumodal-container{
-    border-radius: 3px;
 	position: absolute;
 	z-index: 10;
-	-moz-box-shadow: 0 0 0 6px rgba(170, 170, 170, 0.3);
-    -webkit-box-shadow: 0 0 0 6px rgba(170, 170, 170, 0.3);
-    box-shadow: 0 0 0 6px rgba(170, 170, 170, 0.3);
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-}
-.wumodal-content{
-	padding: 10px;
-	background: #FFF;
-	-moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
 }
 .wumodal-close-button{
 	position: absolute;
-	right: 5px;
-	top: 2px;
-	color: #999999;
-	font-size: 11px;
 }
 .wumodal-container .wumodal-cl-butt-img{
 	position: absolute;
-	right: -15px;
-	top: -15px;
-	display: block;
-	text-indent: -9999px;
-	background: url(../img/close.png) no-repeat;
-	width: 24px;
-	height: 24px;
-}/*
-.test{
-	height: 300px;
-}
+}/

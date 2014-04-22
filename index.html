@@ -13,10 +13,16 @@
 			overlayBg : 'red',
 			closeImg : false,
 			containerClass : 'test',
-			positionContainer : 'center'
+			positionContainer : 'center',
+			activeEvent : 'hover',
 		});
 
 		$('.test2').wumodal({
+			template: '<p>Проверка работоспособности шаблона</p>'
+					  +'<p>Все отлично!</p>',
+		});
+
+		$('.test3').wumodal({
 			template: '<p>Проверка работоспособности шаблона</p>'
 					  +'<p>Все отлично!</p>',
 		});
