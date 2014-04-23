@@ -1,5 +1,5 @@
 /*Style Theme Default*/
-.wumodal-container{
+.wumodal-container.default{
 	-moz-box-shadow: 0 0 0 6px rgba(170, 170, 170, 0.3);
     -webkit-box-shadow: 0 0 0 6px rgba(170, 170, 170, 0.3);
     box-shadow: 0 0 0 6px rgba(170, 170, 170, 0.3);
@@ -7,25 +7,28 @@
     -webkit-border-radius: 3px;
     border-radius: 3px;
 }
-.wumodal-content{
+.default .wumodal-content{
 	padding: 10px;
 	background: #FFF;
 	-moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
 }
-.wumodal-close-button{
+.default .wumodal-close-button{
 	right: 5px;
 	top: 2px;
 	color: #999999;
 	font-size: 11px;
 }
-.wumodal-container .wumodal-cl-butt-img{
-	right: -15px;
-	top: -15px;
+.wumodal-container.default .wumodal-cl-butt-img{
+	right: 3px;
+	top: 3px;
 	display: block;
 	text-indent: -9999px;
 	background: url(../img/close.png) no-repeat;
-	width: 24px;
-	height: 24px;
+	width: 12px;
+	height: 12px;
+}
+.wumodal-container.default .wumodal-cl-butt-img:hover{
+	background-position: 0 -14px;
 }

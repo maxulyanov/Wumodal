@@ -10,20 +10,15 @@
 	$(function(){
 		$('.test').wumodal({
 			opacityOverlay : 0.4,
-			overlayBg : 'red',
-			closeImg : false,
 			containerClass : 'test',
-			positionContainer : 'center',
-			activeEvent : 'hover',
+			positionContainer : 'bottom',
+			theme : 'red',
+			template: '<h2 class="head-modal">Модальное окно</h2>'
+					  +'<div class="inner-content">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</div>',
 		});
 
 		$('.test2').wumodal({
-			template: '<p>Проверка работоспособности шаблона</p>'
-					  +'<p>Все отлично!</p>',
-		});
-
-		$('.test3').wumodal({
-			template: '<p>Проверка работоспособности шаблона</p>'
+			template: '<p style="margin-top:5px;">Проверка работоспособности шаблона</p>'
 					  +'<p>Все отлично!</p>',
 		});
 	})

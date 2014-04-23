@@ -23,7 +23,9 @@
 			// Определение переменных	
 			var body = $('body'),
 				overlay = $('<div class="wumodal-overlay"></div>'),
-				container = $('<div class="wumodal-container ' + options.containerClass + '"></div>'),
+				container = $('<div class="wumodal-container ' 
+					+ options.containerClass + ' '+ options.theme + '"></div>'
+				),
 				content = $('<div class="wumodal-content"></div>'),
 				close = $('<a href="#" class="wumodal-close-button">Закрыть</a>'),
 				objDef = {};

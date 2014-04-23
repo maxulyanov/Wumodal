@@ -1,0 +1,38 @@
+/*Style Theme Default*/
+.wumodal-container.red{
+	width: 300px;
+	border-bottom: 3px solid #d64531;
+}
+.red .wumodal-content{
+	color: #fff;
+}
+.red .wumodal-content .head-modal{
+	background: #d64531;
+	padding: 15px 10px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 15px;
+}
+.red .wumodal-content .inner-content{
+	background: #e94b35;
+	padding: 20px;
+}
+.red .wumodal-close-button{
+	right: 5px;
+	top: 2px;
+	color: #999999;
+	font-size: 11px;
+}
+.wumodal-container.red .wumodal-cl-butt-img{
+	right: 3px;
+	top: 3px;
+	display: block;
+	text-indent: -9999px;
+	background: url(../img/close.png) 0 -22px no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.wumodal-container.red .wumodal-cl-butt-img:hover{
+	background-position: 0 0;
+}
