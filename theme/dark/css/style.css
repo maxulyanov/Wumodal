@@ -1,5 +1,5 @@
 /*Style Theme Default*/
-.wumodal-container.fancybox{
+.wumodal-container.dark{
 	-moz-box-shadow: 0 0 10px 0px rgba(80, 80, 80, 1);
     -webkit-box-shadow: 0 0 10px 0px rgba(80, 80, 80, 1);
     box-shadow: 0 0 10px 0px rgba(80, 80, 80, 1);
@@ -7,20 +7,22 @@
     -webkit-border-radius: 3px;
     border-radius: 3px;
 }
-.fancybox .wumodal-content{
+.dark .wumodal-content{
 	padding: 10px;
-	background: #FFF;
+	background: #2E2E2E;
+	color: #E2E2E2;
+	border: 5px solid rgb(36, 37, 36);
 	-moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
 }
-.fancybox .wumodal-close-button{
+.dark .wumodal-close-button{
 	right: 5px;
 	top: 2px;
 	color: #999999;
 	font-size: 11px;
 }
-.wumodal-container.fancybox .wumodal-cl-butt-img{
+.wumodal-container.dark .wumodal-cl-butt-img{
 	right: -12px;
 	top: -12px;
 	display: block;

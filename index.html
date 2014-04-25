@@ -12,7 +12,7 @@
 			opacityOverlay : 0.4,
 			containerClass : 'test',
 			positionContainer : 'bottom',
-			theme : 'red',
+			theme : 'lightred',
 			template: '<h2 class="head-modal">Модальное окно</h2>'
 					  +'<div class="inner-content">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</div>',
 		});
@@ -21,11 +21,19 @@
 			template: '<p style="margin-top:5px;">Проверка работоспособности шаблона</p>'
 					  +'<p>Все отлично!</p>',
 		});
-	})
+
+		$('.test3').wumodal({
+			template: '<p style="margin-top:5px;">Проверка работоспособности шаблона</p>'
+					  +'<p>Все отлично!</p>',
+			theme : 'dark',		  
+		});
+
+	});
 </script>
 </head>
 <body>
 	<a href="#" class="test">Test 1</a>
 	<a href="#" class="test2">Test 2</a>
+	<a href="#" class="test3">Test 3</a>
 </body>
 </html>
