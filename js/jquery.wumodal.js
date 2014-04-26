@@ -13,6 +13,8 @@
 			activeEvent : 'click',
 			containerClass : '',
 			overlayBg : '#000',
+			modalWidth : false,
+			modalHeight : false,
 			theme : 'default',
 		};
 
@@ -112,6 +114,13 @@
 					background: options.overlayBg,
 				})
 			};
+
+			if(options.modalWidth){
+				content.css('width', options.modalWidth);
+			}
+			if(options.modalHeight){
+				content.css('height', options.modalHeight);
+			}
 
 
 			// Функция анимации при показе
