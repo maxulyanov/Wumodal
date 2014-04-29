@@ -1,4 +1,6 @@
-/*Reset*/
+/*------------
+	RESET
+-----------*/
 *{
 	margin:0;
 	padding:0;
@@ -24,12 +26,51 @@ a{
     text-decoration: none;
 }
 
-/*General*/
+/*------------
+	STYLE
+-----------*/
 body{
 	font-family: Arial;
+	background: rgb(198, 231, 247);
 }
-
-/*Style*/
+.wrapper{
+	width: 960px;
+	margin: 0 auto;
+}
+.wrapper > h2{
+	background: #F1F1F1;
+	border-bottom: 2px solid rgb(223, 223, 223);
+	padding: 10px;
+	border-right: 1px solid rgb(223, 223, 223);
+	color: #383737;
+	font-size: 18px;
+}
+.wrapper > div{
+	border: 1px solid #F1F1F1;
+	margin: 20px auto;
+	padding: 10px;
+}
+.wrapper > div > a{
+	color: #383737;
+	text-decoration: underline;
+	font-size: 14px;
+}
+.wrapper > div > a:hover{
+	color: #1258A5;
+}
+.wrapper pre{
+	background: #f1f1f1;
+	border-left: 2px solid rgb(98, 173, 209);
+	padding: 10px;
+	margin-top: 5px;
+}
+.wrapper pre span{
+	color: rgb(18, 150, 60);
+	font-weight: bold;
+}
+/*------------
+	GENERAL
+-----------*/
 .wumodal-overlay{
 	position: absolute;
 	top: 0;
