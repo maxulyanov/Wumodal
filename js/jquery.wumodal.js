@@ -125,6 +125,10 @@
 
 			// Функция анимации при показе
 			function animateShow(){
+				if(options.closeClickOverlay){
+					$('.wumodal-overlay').css('cursor', 'pointer');
+				}
+				
 				var obj = {};
 				var position = options.positionContainer;
 				obj[position] = '50%';
@@ -180,8 +184,8 @@
 
 			// По клику на затемнение
 			function clickOverlay(event){
-				if (options.closeClickOverlay){
-					if ($(event.target).is('.wumodal-overlay')){
+				if(options.closeClickOverlay){
+					if($(event.target).is('.wumodal-overlay')){
 						hideModal();
 					}
 				};

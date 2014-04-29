@@ -8,29 +8,17 @@
 <script src="js/jquery.wumodal.js"></script>
 <script type="text/javascript">
 	$(function(){
-		$('.test').wumodal({
-			opacityOverlay : 0.4,
-			containerClass : 'test',
+		$('.call-1').wumodal();
+
+		$('.call-2').wumodal({
+			opacityOverlay : 0.9,
 			modalWidth : 300,
+			closeClickOverlay : false,
 			positionContainer : 'bottom',
-			theme : 'lightred',
-			template: '<h2 class="head-modal">Модальное окно</h2>'
-					  +'<div class="inner-content">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</div>',
+			containerClass : 'newclass',
+			template: '<p>Базовый шаблон легко изменить, написать здесь текст или вставить форму </p>' + 
+			'<input type="text">' + '<input type="button" value="Готово">',
 		});
-
-		$('.test2').wumodal({
-			template: '<p style="margin-top:5px;">Проверка работоспособности шаблона</p>'
-					  +'<p>Все отлично!</p>',
-		});
-
-		$('.test3').wumodal({
-			template: '<p style="margin-top:5px;">Проверка работоспособности шаблона</p>'
-					  +'<p>Все отлично!</p>',
-			theme : 'lightgreen',
-			modalWidth : 500,
-			modalHeight : 400,		  
-		});
-
 	});
 
 
@@ -38,8 +26,24 @@
 </script>
 </head>
 <body>
-	<a href="#" class="test">Test 1</a>
-	<a href="#" class="test2">Test 2</a>
-	<a href="#" class="test3">Test 3</a>
+	<div class="wrapper">
+		<h2>Примеры работы плагина модального окна Wumodal.</h2>
+		<div class="block-1">
+			<a class="call-1" href="#">Простой вызов</a>
+			<pre>$('.call-1').wumodal();</pre>
+		</div>
+		<div class="block-2">
+			<a class="call-2" href="#">Вызов с пользовательскими параметрами</a>
+			<pre>
+		   $('.call-2').wumodal({
+			opacityOverlay : 0.9, //прозрачность затемнения
+			modalWidth : 300, //ширина окна
+			closeClickOverlay : false, //отменяем закрытие окна при клике на затемнение
+			positionContainer : 'bottom', // с какой стороны будет появляется окно
+			containerClass : 'newclass', // доп. класс для стилизации этого окна
+			template: &lt;p&gt;Базовый шаблон легко изменить, написать здесь текст или вставить форму&lt;/p&gt;
+		   });</pre>
+		</div>
+	</div>
 </body>
 </html>
