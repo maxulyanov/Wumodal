@@ -146,14 +146,8 @@
 			// Функция анимации при скрытии
 			function animateHide(){
 				var obj = {};
-				var position = options.positionContainer;
-				if(pos === 'center'){
-					position = 'top'
-					obj[position] = '50%'
-				}
-				else{
-					obj[position] = '20%'
-				} 
+				var position = options.positionContainer;			
+				obj[position] = '20%'
 				overlay.animate({
 					opacity: 0,
 				}, options.speedOverlay);
