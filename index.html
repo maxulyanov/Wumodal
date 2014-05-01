@@ -16,18 +16,43 @@
 			closeClickOverlay : false,
 			positionContainer : 'bottom',
 			containerClass : 'newclass',
-			template: '<p>Базовый шаблон легко изменить, написать здесь текст или вставить форму </p>' + 
+			template: '<p>Базовый шаблон легко изменить, написать здесь текст или вставить форму:</p>' + 
 			'<input type="text">' + '<input type="button" value="Готово">',
 		});
 
 		$('.call-3').wumodal({
-			activeEvent: 'hover',
+			activeEvent : 'hover',
 			positionContainer : 'center',
+		});
+
+		$('.call-4').wumodal({
+			positionContainer : 'left',
+			theme : 'dark',
+			template : 'Используем для этого модального окна тему dark',
+		});
+
+		$('.call-5').wumodal({
+			speedModal : 800,
+			modalHeight: 200,
+			theme : 'fancybox',
+			template : 'Используем для этого модального окна тему fancybox',
+		});
+
+		$('.call-6').wumodal({
+			overlayBg : '#0F3547',
+			theme : 'lightgreen',
+			template : 'Используем для этого модального окна тему lightgreen',
+		});
+
+		$('.call-7').wumodal({
+			modalWidth : 300,
+			theme : 'lightred',
+			template : '<h2 class="head-modal">Модальное окно</h2>'
+ 					  +'<div class="inner-content">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</div>',
 		});
 	});
 
 
-	//callback
 </script>
 </head>
 <body>
@@ -42,7 +67,7 @@
 
 <pre>
 $('.call-2').wumodal({
-	opacityOverlay : 0.9, <span>// прозрачность затемнения</span>
+	opacityOverlay : 0.9, <span>// прозрачность затемнения 90%</span>
 	modalWidth : 300, <span>// ширина окна</span>
 	closeClickOverlay : false, <span>// отменяем закрытие окна при клике на затемнение</span>
 	positionContainer : 'bottom', <span>// с какой стороны будет появляется окно</span>
@@ -59,6 +84,43 @@ $('.call-2').wumodal({
 	positionContainer : 'center',	<span>// c какой стороны будет появляться</span>
 });</pre>
 		</div>
+		<div class="block-4">
+			<a class="call-4" href="#">4.Вызов темы dark + параметры</a>
+<pre>$('.call-4').wumodal({
+	positionContainer : 'left', <span>// c какой стороны будет появляется</span>
+	theme : 'dark', <span>// выберем тему dark</span>
+	template: 'Используем для этого модального окна тему dark'<span>// изменим стандартный шаблон </span>
+});</pre>
+		</div>
+		<div class="block-5">
+			<a class="call-5" href="#">5.Вызов темы fancybox + параметры</a>
+<pre>$('.call-5').wumodal({
+	speedModal : 800, <span>// Скорость появления окна</span>
+	modalHeight: 200, <span>// Фиксированная высота окна</span>
+	theme : 'fancybox',<span>// выберем тему fancybox</span>
+	template: 'Используем для этого модального окна тему fancybox',<span>// изменим стандартный шаблон</span>
+});</pre>
+		</div>
+		<div class="block-6">
+			<a class="call-6" href="#">6.Вызов темы lightgreen</a>
+<pre>$('.call-6').wumodal({
+	overlayBg : '#0F3547',<span>// цвет затемнения</span>
+	theme : 'lightgreen',<span>// выберем тему lightgreen</span>
+	template : 'Используем для этого модального окна тему lightgreen', <span>// изменим стандартный шаблон</span>
+});</pre>
+		</div>
+		<div class="block-7">
+			<a class="call-7" href="#">7.Вызов темы lightred</a>
+<pre>$('.call-7').wumodal({
+	modalWidth : 300, <span>// фиксированная ширина для этого окна</span>
+	theme : 'lightred', <span>// выберем тему lightred</span>
+	template : '&lt;h2 class="head-modal"&gt;Модальное окно&lt;/h2&gt;'+'
+	&lt;div class="inner-content"&gt;"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <br>laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit <br>esse cillum dolore eu fugiat nulla pariatur."&lt;/div&gt;', <span>// более сложный шаблон</span>
+});</pre>
+		</div>
+	</div>
+	<div id="footer">
+		Автор идеи и разработчик <a href="https://github.com/M-Ulyanov/">M.Ulyanov.</a>
 	</div>
 </body>
 </html>

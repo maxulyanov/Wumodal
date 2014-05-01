@@ -63,8 +63,33 @@ body{
 	border-left: 2px solid rgb(98, 173, 209);
 	padding: 10px;
 	margin-top: 5px;
+	white-space:pre-line;
 }
 .wrapper pre span{
+	color: rgb(18, 150, 60);
+	font-weight: bold;
+}
+.wumodal-content input[type="text"]{
+	border: 1px solid rgb(187, 186, 186);
+	width: 100px;
+	padding: 3px;
+	margin-top: 5px;
+}
+.wumodal-content input[type="button"]{
+	cursor: pointer;
+	padding: 4px;
+	margin-left: 5px;
+	background: rgb(92, 92, 92);
+	color: #fff;
+}
+#footer{
+	text-align: center;
+	background: #222;
+	padding: 10px;
+	color: #FFF;
+	font-size: 12px;
+}
+#footer a{
 	color: rgb(18, 150, 60);
 	font-weight: bold;
 }
@@ -72,7 +97,7 @@ body{
 	GENERAL
 -----------*/
 .wumodal-overlay{
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -80,7 +105,7 @@ body{
 	z-index: 1;
 }
 .wumodal-container{
-	position: absolute;
+	position: fixed;
 	z-index: 10;
 }
 .wumodal-close-button{
