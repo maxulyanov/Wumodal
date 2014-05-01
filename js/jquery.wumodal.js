@@ -139,7 +139,7 @@
 				.animate({
 					opacity: '1'
 				}, {
-					queue:false, duration: options.speedOverlay
+					queue:false, duration: options.speedModal
 				});
 			};
 
@@ -155,7 +155,7 @@
 				.animate({
 					opacity:'0'
 				}, {
-					queue:false, duration: options.speedOverlay
+					queue:false, duration: options.speedModal
 				});
 			};
 
